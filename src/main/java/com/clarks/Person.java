@@ -1,4 +1,4 @@
-package com.clarks.pojo;
+package com.clarks;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
