@@ -1,9 +1,9 @@
 package com.clarks.back.service.impl;
 
 import com.clarks.back.service.AdminUserService;
-import com.clarks.bean.AdminUser;
-import com.clarks.bean.AdminUserExample;
-import com.clarks.dao.AdminUserMapper;
+import com.clarks.mapper.AdminUserMapper;
+import com.clarks.pojo.AdminUser;
+import com.clarks.pojo.AdminUserExample;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -66,7 +66,7 @@ public class AdminUserServiceImpl  implements AdminUserService {
 		if(StringUtils.isNotBlank(keyWords)){
 			keyWords = "%"+keyWords+"%";
 			AdminUserExample.Criteria criteria = adminUserExample.createCriteria();
-			criteria.andUserNameLike(keyWords);	
+			criteria.andUserNameLike(keyWords);
 		}else {
 			keyWords = null;
 		}

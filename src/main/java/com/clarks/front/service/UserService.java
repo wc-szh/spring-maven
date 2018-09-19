@@ -1,7 +1,8 @@
 package com.clarks.front.service;
 
 
-import com.clarks.bean.User;
+
+import com.clarks.pojo.User;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;

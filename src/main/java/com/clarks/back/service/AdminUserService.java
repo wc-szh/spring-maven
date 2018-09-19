@@ -1,6 +1,6 @@
 package com.clarks.back.service;
 
-import com.clarks.bean.AdminUser;
+import com.clarks.pojo.AdminUser;
 
 import java.util.List;
 

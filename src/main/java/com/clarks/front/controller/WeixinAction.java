@@ -1,9 +1,9 @@
 package com.clarks.front.controller;
 
 import com.clarks.back.service.ConfigService;
-import com.clarks.bean.Config;
 import com.clarks.front.service.UserService;
-import com.weixin.common.Configure;
+import com.clarks.pojo.Config;
+import com.weixin.Configure;
 import org.apache.commons.lang.StringUtils;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;

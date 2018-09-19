@@ -1,7 +1,8 @@
 package com.clarks.back.service;
 
 
-import com.clarks.bean.DailyCount;
+
+import com.clarks.pojo.DailyCount;
 
 import java.util.Date;
 

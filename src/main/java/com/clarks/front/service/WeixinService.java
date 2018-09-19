@@ -1,6 +1,7 @@
 package com.clarks.front.service;
 
-import com.clarks.bean.WxAuthorize;
+
+import com.clarks.pojo.WxAuthorize;
 
 import java.util.List;
 

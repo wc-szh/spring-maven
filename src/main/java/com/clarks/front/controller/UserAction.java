@@ -7,9 +7,9 @@ import com.clarks.back.service.ConfigService;
 import com.clarks.back.service.PrizeRecordService;
 import com.clarks.back.service.PrizeService;
 import com.clarks.back.service.StatisticService;
-import com.clarks.bean.*;
 import com.clarks.front.service.GameStatusService;
-import com.jeecms.core.Constants;
+import com.clarks.pojo.*;
+import com.jeecms.common.web.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -148,7 +148,6 @@ public class UserAction extends BaseAction{
 	 * 
 	 * @param gameNo
 	 * @param gameMark
-	 * @param isPass
 	 * @param response
 	 * @param request
 	 */
@@ -301,7 +300,6 @@ public class UserAction extends BaseAction{
 	/**
 	 * 用户抽奖
 	 * 
-	 * @param secretPass
 	 * @param request
 	 * @param response
 	 * @param model

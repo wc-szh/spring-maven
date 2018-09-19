@@ -5,18 +5,18 @@ import com.clarks.back.service.DailyCountService;
 import com.clarks.back.service.PrizeRecordService;
 import com.clarks.back.service.StatisticService;
 import com.clarks.back.utils.BackUtils;
-import com.clarks.bean.Config;
-import com.clarks.bean.Statistic;
-import com.clarks.bean.User;
+import com.clarks.front.controller.BaseAction;
 import com.clarks.front.service.UserService;
-import com.clarks.front.utils.RequestUtils;
+import com.clarks.pojo.Config;
+import com.clarks.pojo.Statistic;
+import com.clarks.pojo.User;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.gwold.common.page.SimplePage;
-import com.jeecms.common.page.Pagination;
+import com.gwold.page.Pagination;
+import com.gwold.page.SimplePage;
+import com.jeecms.common.web.Constants;
 import com.jeecms.common.web.CookieUtils;
-import com.jeecms.core.BaseAction;
-import com.jeecms.core.Constants;
+import com.jeecms.common.web.RequestUtils;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,7 +33,7 @@ import java.util.List;
 
 @RequestMapping(value="/statistic")
 @Controller
-public class StatisticAct extends BaseAction{
+public class StatisticAct extends BaseAction {
 	private static Logger logger = LoggerFactory.getLogger(StatisticAct.class);
 	@Autowired
 	private StatisticService statisticService;
@@ -66,7 +66,6 @@ public class StatisticAct extends BaseAction{
 	/**
 	 * 保存页面访问记录
 	 * @param pageUrl
-	 * @param username
 	 * @param request
 	 */
 	@RequestMapping(value="/{pageUrl}")
@@ -99,8 +98,6 @@ public class StatisticAct extends BaseAction{
 	/**
 	 * 统计页面
 	 * @param pageNo
-	 * @param pageUrl
-	 * @param dayDate
 	 * @param request
 	 * @param model
 	 * @return

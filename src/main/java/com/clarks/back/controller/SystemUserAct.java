@@ -7,16 +7,17 @@ import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
 import com.clarks.back.service.AdminUserService;
 import com.clarks.back.service.ConfigService;
 import com.clarks.back.utils.BackUtils;
-import com.clarks.bean.AdminUser;
-import com.clarks.bean.Config;
-import com.clarks.front.action.BaseAction;
+
+import com.clarks.front.controller.BaseAction;
 import com.clarks.front.utils.MD5Utils;
+import com.clarks.pojo.AdminUser;
+import com.clarks.pojo.Config;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.gwold.common.page.SimplePage;
+import com.gwold.page.SimplePage;
+import com.jeecms.common.web.Constants;
 import com.jeecms.common.web.CookieUtils;
 import com.jeecms.common.web.ResponseUtils;
-import com.jeecms.core.Constants;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,7 +40,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/useradmin")
-public class SystemUserAct extends BaseAction{
+public class SystemUserAct extends BaseAction {
 	public static final Logger log = LoggerFactory.getLogger(SystemAct.class);
 	
 	@Autowired

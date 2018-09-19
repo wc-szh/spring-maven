@@ -1,10 +1,9 @@
 package com.clarks.back.service.impl;
 
 import com.clarks.back.service.PrizeService;
-import com.clarks.bean.Prize;
-import com.clarks.bean.PrizeExample;
-import com.clarks.bean.PrizeExample.Criteria;
-import com.clarks.dao.PrizeMapper;
+import com.clarks.mapper.PrizeMapper;
+import com.clarks.pojo.Prize;
+import com.clarks.pojo.PrizeExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,7 +40,7 @@ public class PrizeServiceImpl implements PrizeService {
 	public List<Prize> selectPrizeById() {
 		PrizeExample prizeExample = new PrizeExample();
 		prizeExample.setOrderByClause("id asc");
-		Criteria criteria = prizeExample.createCriteria();
+		PrizeExample.Criteria criteria = prizeExample.createCriteria();
 		criteria.andIsDeleteEqualTo(Integer.valueOf(0));
 		return prizeMapper.selectByExample(prizeExample);
 	}

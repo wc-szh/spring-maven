@@ -1,9 +1,9 @@
 package com.clarks.back.service.impl;
 
 import com.clarks.back.service.DailyCountService;
-import com.clarks.bean.DailyCount;
-import com.clarks.bean.DailyCountExample;
-import com.clarks.dao.DailyCountMapper;
+import com.clarks.mapper.DailyCountMapper;
+import com.clarks.pojo.DailyCount;
+import com.clarks.pojo.DailyCountExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

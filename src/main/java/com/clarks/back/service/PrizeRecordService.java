@@ -1,6 +1,7 @@
 package com.clarks.back.service;
 
-import com.clarks.bean.PrizeRecord;
+
+import com.clarks.pojo.PrizeRecord;
 
 import java.text.ParseException;
 import java.util.Date;

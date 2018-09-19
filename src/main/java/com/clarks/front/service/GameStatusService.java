@@ -1,7 +1,8 @@
 package com.clarks.front.service;
 
-import com.clarks.bean.GameStatus;
-import com.clarks.bean.PrizeRecord;
+
+import com.clarks.pojo.GameStatus;
+import com.clarks.pojo.PrizeRecord;
 
 public interface GameStatusService {
 

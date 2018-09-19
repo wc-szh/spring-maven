@@ -1,11 +1,11 @@
 package com.clarks.front.service.impl;
 
-import com.clarks.bean.GameStatus;
-import com.clarks.bean.GameStatusExample;
-import com.clarks.bean.PrizeRecord;
-import com.clarks.dao.GameStatusMapper;
-import com.clarks.dao.PrizeRecordMapper;
 import com.clarks.front.service.GameStatusService;
+import com.clarks.mapper.GameStatusMapper;
+import com.clarks.mapper.PrizeRecordMapper;
+import com.clarks.pojo.GameStatus;
+import com.clarks.pojo.GameStatusExample;
+import com.clarks.pojo.PrizeRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,7 +31,7 @@ public class GameStatusServiceImpl implements GameStatusService {
 //    	GameStatus gs = new GameStatus();
 //    	gs.setUserId(userId);
 //    	List<GameStatus> list = findByEgList(gs);
-    	GameStatusExample  gameStatusExample = new GameStatusExample();
+    	GameStatusExample gameStatusExample = new GameStatusExample();
     	GameStatusExample.Criteria criteria = gameStatusExample.createCriteria();
     	criteria.andUserIdEqualTo(userId);
     	List<GameStatus> list = gameStatusMapper.selectByExample(gameStatusExample);

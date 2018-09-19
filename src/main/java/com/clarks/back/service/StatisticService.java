@@ -1,6 +1,7 @@
 package com.clarks.back.service;
 
-import com.clarks.bean.Statistic;
+
+import com.clarks.pojo.Statistic;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;

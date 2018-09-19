@@ -1,6 +1,6 @@
 package com.clarks.front.controller;
 
-import com.jeecms.common.util.UnicodeUtil;
+import com.jeecms.common.utils.UnicodeUtil;
 import com.jeecms.common.web.ErrorCode;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

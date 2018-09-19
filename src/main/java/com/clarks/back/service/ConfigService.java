@@ -1,6 +1,6 @@
 package com.clarks.back.service;
 
-import com.clarks.bean.Config;
+import com.clarks.pojo.Config;
 
 import java.util.List;
 

@@ -6,12 +6,12 @@ import com.clarks.back.service.AdminUserService;
 import com.clarks.back.service.ConfigService;
 import com.clarks.back.service.LoginService;
 import com.clarks.back.utils.BackUtils;
-import com.clarks.bean.AdminUser;
-import com.clarks.bean.Config;
-import com.clarks.front.action.BaseAction;
+import com.clarks.front.controller.BaseAction;
 import com.clarks.front.utils.MD5Utils;
-import com.gwold.core.web.WebErrors;
-import com.jeecms.core.Constants;
+import com.clarks.pojo.AdminUser;
+import com.clarks.pojo.Config;
+import com.gwold.web.WebErrors;
+import com.jeecms.common.web.Constants;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -32,7 +32,7 @@ import java.util.*;
 
 
 @Controller
-public class SystemAct extends BaseAction{
+public class SystemAct extends BaseAction {
 	public static final Logger log = LoggerFactory.getLogger(SystemAct.class);
 	@Autowired
 	private ConfigService configService;

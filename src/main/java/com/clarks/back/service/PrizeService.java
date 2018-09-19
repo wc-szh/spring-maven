@@ -1,6 +1,7 @@
 package com.clarks.back.service;
 
-import com.clarks.bean.Prize;
+
+import com.clarks.pojo.Prize;
 
 import java.util.List;
 

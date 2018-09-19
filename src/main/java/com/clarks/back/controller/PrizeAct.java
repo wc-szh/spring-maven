@@ -5,15 +5,15 @@ import com.clarks.back.service.ConfigService;
 import com.clarks.back.service.PrizeRecordService;
 import com.clarks.back.service.PrizeService;
 import com.clarks.back.utils.BackUtils;
-import com.clarks.bean.AdminUser;
-import com.clarks.bean.Config;
-import com.clarks.bean.Prize;
+import com.clarks.front.controller.BaseAction;
+import com.clarks.pojo.AdminUser;
+import com.clarks.pojo.Config;
+import com.clarks.pojo.Prize;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.jeecms.common.page.Pagination;
+import com.gwold.page.Pagination;
+import com.jeecms.common.web.Constants;
 import com.jeecms.common.web.CookieUtils;
-import com.jeecms.core.BaseAction;
-import com.jeecms.core.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value="/prize/")
-public class PrizeAct extends BaseAction{
+public class PrizeAct extends BaseAction {
 	public static final Logger log = LoggerFactory.getLogger(PrizeAct.class);
 	@Autowired
 	private ConfigService configService;

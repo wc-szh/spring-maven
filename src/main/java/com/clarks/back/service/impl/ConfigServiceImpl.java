@@ -1,9 +1,9 @@
 package com.clarks.back.service.impl;
 
 import com.clarks.back.service.ConfigService;
-import com.clarks.bean.Config;
-import com.clarks.bean.ConfigExample;
-import com.clarks.dao.ConfigMapper;
+import com.clarks.mapper.ConfigMapper;
+import com.clarks.pojo.Config;
+import com.clarks.pojo.ConfigExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

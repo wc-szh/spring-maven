@@ -1,16 +1,16 @@
 package com.clarks.front.service.impl;
 
 import com.clarks.back.service.DailyCountService;
-import com.clarks.bean.DailyCount;
-import com.clarks.bean.User;
-import com.clarks.bean.UserExample;
-import com.clarks.dao.DailyCountMapper;
-import com.clarks.dao.UserMapper;
 import com.clarks.front.service.UserService;
 import com.clarks.front.service.WeixinService;
 import com.clarks.front.utils.MD5Utils;
-import com.clarks.front.utils.RequestUtils;
-import com.jeecms.core.Constants;
+import com.clarks.mapper.DailyCountMapper;
+import com.clarks.mapper.UserMapper;
+import com.clarks.pojo.DailyCount;
+import com.clarks.pojo.User;
+import com.clarks.pojo.UserExample;
+import com.jeecms.common.web.Constants;
+import com.jeecms.common.web.RequestUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -207,7 +207,7 @@ public class UserServiceImpl implements UserService {
 
 		//获取用户信息
 		if(StringUtils.isNotBlank(openId)) {
-			String url = "https://api.weixin.qq.com/sns/userinfo?access_token="+accessToken //授权接口调用凭证
+			String url = "https://api.weixin.qq.	com/sns/userinfo?access_token="+accessToken //授权接口调用凭证
 					+ "&openid="+openId//用户唯一标识
 					+ "&lang=zh_CN";//简体
 			String result = sendGet(url);
@@ -249,7 +249,7 @@ public class UserServiceImpl implements UserService {
 	public void saveDailyCount(User user, HttpServletRequest req, String nickname){
 		try {
 			String ip = RequestUtils.getIpAddr(req);
-			DailyCount dailyCount = new DailyCount();  
+			DailyCount dailyCount = new DailyCount();
 			dailyCount.setUserIp(ip);
 			dailyCount.setPageUrl("index.cc");
 			dailyCount.setNickName(nickname);
@@ -289,7 +289,6 @@ public class UserServiceImpl implements UserService {
 
 	/**
 	 * 微信登录，封装user并保存
-	 * @param result
 	 * @param req
 	 * @param headPic 
 	 * @param sex 

@@ -1,13 +1,13 @@
 package com.clarks.back.service.impl;
 
 import com.clarks.back.service.LoginService;
-import com.clarks.bean.AdminUser;
-import com.clarks.bean.LoginRecord;
-import com.clarks.bean.LoginRecordExample;
-import com.clarks.bean.User;
-import com.clarks.dao.AdminUserMapper;
-import com.clarks.dao.LoginRecordMapper;
-import com.jeecms.common.web.RequestUtils;
+import com.clarks.front.utils.RequestUtils;
+import com.clarks.mapper.AdminUserMapper;
+import com.clarks.mapper.LoginRecordMapper;
+import com.clarks.pojo.AdminUser;
+import com.clarks.pojo.LoginRecord;
+import com.clarks.pojo.LoginRecordExample;
+import com.clarks.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,7 +31,7 @@ public class LoginServiceImpl  implements LoginService {
 	@Autowired
 	private AdminUserMapper adminUserMapper;
 	
-	 public LoginRecord save(int category, String ip, Date date,Integer userId) {
+	 public LoginRecord save(int category, String ip, Date date, Integer userId) {
 //		 	AdminUser adminUser = adminUserService.findById(userId);
 		 AdminUser adminUser = adminUserMapper.selectByPrimaryKey(userId);
 	    	LoginRecord log = new LoginRecord();
@@ -65,7 +65,7 @@ public class LoginServiceImpl  implements LoginService {
 			return log;
 		}
 	    
-	    public LoginRecord userLogin (User user,HttpServletRequest request){
+	    public LoginRecord userLogin (User user, HttpServletRequest request){
 	    	LoginRecord lr = new LoginRecord();
 	    	String ip = RequestUtils.getIpAddr(request);
 	    	lr.setContent(LoginRecord.LOGIN_SUCCESS_TITLE);

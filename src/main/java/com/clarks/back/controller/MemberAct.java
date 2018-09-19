@@ -6,14 +6,14 @@ import com.clarks.back.service.LoginService;
 import com.clarks.back.service.PrizeRecordService;
 import com.clarks.back.service.PrizeService;
 import com.clarks.back.utils.BackUtils;
-import com.clarks.bean.*;
+import com.clarks.front.controller.BaseAction;
 import com.clarks.front.service.GameStatusService;
 import com.clarks.front.service.UserService;
+import com.clarks.pojo.*;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.jeecms.common.page.Pagination;
+import com.gwold.page.Pagination;
 import com.jeecms.common.web.CookieUtils;
-import com.jeecms.core.BaseAction;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,7 +29,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value="/member")
-public class MemberAct extends BaseAction{
+public class MemberAct extends BaseAction {
 	
 	public static final Logger log = LoggerFactory.getLogger(MemberAct.class);
 	@Autowired

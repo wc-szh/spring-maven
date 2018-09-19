@@ -1,9 +1,9 @@
 package com.clarks.back.service.impl;
 
 import com.clarks.back.service.PrizeRecordService;
-import com.clarks.bean.PrizeRecord;
-import com.clarks.bean.PrizeRecordExample;
-import com.clarks.dao.PrizeRecordMapper;
+import com.clarks.mapper.PrizeRecordMapper;
+import com.clarks.pojo.PrizeRecord;
+import com.clarks.pojo.PrizeRecordExample;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

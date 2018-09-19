@@ -1,9 +1,9 @@
 package com.clarks.front.service.impl;
 
-import com.clarks.bean.WxAuthorize;
-import com.clarks.bean.WxAuthorizeExample;
-import com.clarks.dao.WxAuthorizeMapper;
 import com.clarks.front.service.WeixinService;
+import com.clarks.mapper.WxAuthorizeMapper;
+import com.clarks.pojo.WxAuthorize;
+import com.clarks.pojo.WxAuthorizeExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

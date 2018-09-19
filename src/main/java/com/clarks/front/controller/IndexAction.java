@@ -1,13 +1,13 @@
 package com.clarks.front.controller;
 
 import com.clarks.back.service.*;
-import com.clarks.bean.Config;
-import com.clarks.bean.GameStatus;
-import com.clarks.bean.User;
 import com.clarks.front.service.GameStatusService;
 import com.clarks.front.service.UserService;
 import com.clarks.front.utils.FrontUtils;
-import com.jeecms.core.Constants;
+import com.clarks.pojo.Config;
+import com.clarks.pojo.GameStatus;
+import com.clarks.pojo.User;
+import com.jeecms.common.web.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

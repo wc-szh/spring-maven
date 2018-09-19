@@ -1,15 +1,15 @@
 package com.clarks.back.service.impl;
 
 import com.clarks.back.service.StatisticService;
-import com.clarks.bean.*;
-import com.clarks.dao.DailyCountMapper;
-import com.clarks.dao.PrizeRecordMapper;
-import com.clarks.dao.StatisticMapper;
-import com.clarks.dao.UserMapper;
 import com.clarks.front.utils.RequestUtils;
-import com.jeecms.core.Constants;
+import com.clarks.mapper.DailyCountMapper;
+import com.clarks.mapper.PrizeRecordMapper;
+import com.clarks.mapper.StatisticMapper;
+import com.clarks.mapper.UserMapper;
+import com.clarks.pojo.*;
+import com.jeecms.common.utils.DateFormatUtils;
+import com.jeecms.common.web.Constants;
 import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.time.DateFormatUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,7 +29,7 @@ public class StatisticServiceImpl implements StatisticService {
 	@Autowired
 	private PrizeRecordMapper prizeRecordMapper;
 	@Autowired
-	private UserMapper userMapper;	
+	private UserMapper userMapper;
 	@Autowired
 	private DailyCountMapper dailyCountMapper;
 	

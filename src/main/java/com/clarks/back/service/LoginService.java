@@ -1,7 +1,8 @@
 package com.clarks.back.service;
 
-import com.clarks.bean.LoginRecord;
-import com.clarks.bean.User;
+
+import com.clarks.pojo.LoginRecord;
+import com.clarks.pojo.User;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
