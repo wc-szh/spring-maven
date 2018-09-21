@@ -38,7 +38,7 @@ public class IndexAction extends BaseAction {
 	@Autowired
 	private DailyCountService dailyCountService;
 
-	public static final String FRONT_PATH = "/WEB-INF/front";
+	public static final String FRONT_PATH = "/jsp/front";
 	public static final String INDEX = "/index";
 
 	/**
