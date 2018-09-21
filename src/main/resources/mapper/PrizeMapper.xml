@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.clarks.dao.PrizeMapper" >
+<mapper namespace="com.clarks.mapper.PrizeMapper" >
 	<!--缓存回收策略：
 	1.LRU 最近最少使用：移除长时间不使用对象
 	2.FIFO 新进先出：按照对象进入的缓存顺序移除

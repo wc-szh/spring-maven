@@ -98,7 +98,8 @@ public class SystemAct extends BaseAction {
 			message = "出错了";
 		}
 		model.addAttribute("message",message);
-		return BackUtils.returnPage(config,"index", "login",request,model);
+//		return BackUtils.returnPage(config,"index", "login",request,model);
+		return "login";
 	}
 	
 	/**
