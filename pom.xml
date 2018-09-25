@@ -154,6 +154,17 @@
             <version>1.2</version>
         </dependency>
 
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+        <!--</dependency>-->
+
+        <!--jsp页面解析-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jasper</artifactId>
+            <version>9.0.12</version>
+        </dependency>
 
         <dependency>
             <groupId>com.vaadin.external.google</groupId>

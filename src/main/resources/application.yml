@@ -3,11 +3,13 @@ Server:
   servlet:
     context-path: /clarks
 
+
+
 spring:
 #  mvc:
 #    view:
-#      suffix: .html
-#      prefix: /
+#      suffix: .jsp
+#      prefix: /WEB-INF/jsp/
   datasource:
     url: jdbc:mysql://localhost:3306/clarks?serverTimezone=GMT%2B8&useSSL=true
     username: root

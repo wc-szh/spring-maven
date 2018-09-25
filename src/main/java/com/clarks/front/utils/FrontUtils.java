@@ -14,7 +14,7 @@ import org.springframework.ui.ModelMap;
 
 public class FrontUtils{
 	
-	private static final String FRONT_PATH = "/WEB-INF/front/";
+	private static final String FRONT_PATH = "/WEB-INF/jsp/front/";
 	private static final String SUFFIX = ".jsp";
 	
 	public static String returnPage(Config config, String dir, String page, HttpServletRequest request, ModelMap model){
