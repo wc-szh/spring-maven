@@ -30,8 +30,8 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-
 @Controller
+@RequestMapping(value="/manager/admin")
 public class SystemAct extends BaseAction {
 	public static final Logger log = LoggerFactory.getLogger(SystemAct.class);
 	@Autowired

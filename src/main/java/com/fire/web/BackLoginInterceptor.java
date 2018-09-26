@@ -41,7 +41,7 @@ public class BackLoginInterceptor extends HandlerInterceptorAdapter {
                 response.setCharacterEncoding("UTF-8");
                 response.setContentType("application/json; charset=utf-8");
                 response.getOutputStream().print("{\"status\":2, \"code\":\"login\", \"info\":\"" + UnicodeUtil.toEncodedUnicode( "登录超时，请重新登录", false) + "\", \"data\":null}" );
-                return false;  
+                return false;
             } 
             List<Config> list = configService.findAll();
             Config config = list.get(0);
