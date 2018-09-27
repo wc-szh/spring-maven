@@ -31,7 +31,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-@RequestMapping(value="/statistic")
+@RequestMapping(value="/manager/admin/statistic")
 @Controller
 public class StatisticAct extends BaseAction {
 	private static Logger logger = LoggerFactory.getLogger(StatisticAct.class);
