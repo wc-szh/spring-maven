@@ -28,7 +28,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping(value="/member")
+@RequestMapping(value="/manager/admin/member")
 public class MemberAct extends BaseAction {
 	
 	public static final Logger log = LoggerFactory.getLogger(MemberAct.class);

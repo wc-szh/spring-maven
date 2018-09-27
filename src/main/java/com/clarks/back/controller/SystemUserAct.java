@@ -39,7 +39,7 @@ import java.util.List;
  * @version 2016年3月24日
  */
 @Controller
-@RequestMapping("/useradmin")
+@RequestMapping("/manager/admin/useradmin")
 public class SystemUserAct extends BaseAction {
 	public static final Logger log = LoggerFactory.getLogger(SystemAct.class);
 	

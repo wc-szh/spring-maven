@@ -28,7 +28,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping(value="/prize/")
+@RequestMapping(value="/manager/admin/prize/")
 public class PrizeAct extends BaseAction {
 	public static final Logger log = LoggerFactory.getLogger(PrizeAct.class);
 	@Autowired

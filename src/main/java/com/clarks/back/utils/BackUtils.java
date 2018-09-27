@@ -17,7 +17,7 @@ import java.util.Set;
 
 public class BackUtils{
 	
-	private static final String BACK_PATH = "WEB-INF/jsp/back/";
+	private static final String BACK_PATH = "/WEB-INF/jsp/back/";
 	private static final String SUFFIX = ".jsp";
 	
 	public static final String AUDIO_FROM = "/usr/ffpmeg/";
