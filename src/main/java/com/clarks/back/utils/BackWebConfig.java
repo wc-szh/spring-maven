@@ -18,6 +18,6 @@ public class BackWebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry){
         registry.addInterceptor(backLoginInterceptors)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/manager/admin/index.do");
+                .excludePathPatterns("/manager/admin/index.do","/**/index.do");
     }
 }
