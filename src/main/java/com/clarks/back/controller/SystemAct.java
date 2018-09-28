@@ -103,7 +103,7 @@ public class SystemAct extends BaseAction {
 		}
 		model.addAttribute("message",message);
 		return BackUtils.returnPage(config,"index", "login",request,model);
-//		return "back/index/login";
+//		return "/WEB-INF/jsp/back/index/login.jsp";
 
 	}
 	

@@ -6,11 +6,11 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Configuration
 public class BackWebConfig implements WebMvcConfigurer {
+
 
     @Autowired
     private BackLoginInterceptors backLoginInterceptors;
