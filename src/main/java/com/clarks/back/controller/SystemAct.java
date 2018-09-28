@@ -19,7 +19,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,7 +27,9 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -36,6 +37,7 @@ import java.util.*;
 @RequestMapping(value="/manager/admin")
 public class SystemAct extends BaseAction {
 	public static final Logger log = LoggerFactory.getLogger(SystemAct.class);
+
 	@Autowired
 	private ConfigService configService;
 	
@@ -210,56 +212,51 @@ public class SystemAct extends BaseAction {
 	 */
 	@RequestMapping(value="/upload_pic.do")
 	public void uploadPics(@RequestParam(required=false) MultipartFile file, HttpServletRequest request, HttpServletResponse response, ModelMap model){
-		String message = null;
 		List<Config> list = configService.findAll();
 		Config config = null;
 		if(list != null){
 			config = list.get(0);
 		}
-		String originalFilename = file.getOriginalFilename();
-		String extension = FilenameUtils.getExtension(originalFilename);
-
-		SimpleDateFormat format = new SimpleDateFormat("ddhhMMssSSS");
-		Set<String> cDifferentRandoms = BackUtils.cDifferentRandoms(1, 6);
-		String filename = format.format(new Date())+cDifferentRandoms+"." + extension;
-		//当前时间
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM");
-		String date = dateFormat.format(new Date());
-		//x
-		String systemPath = null;
-		try {
-			File path = new File(ResourceUtils.getURL("classpath:").getPath());
-			if(!path.exists())
-				path = new File("");
-			systemPath=path.getAbsolutePath();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		String path = systemPath+"/adminUpload/image/"+date;
-		File destFile = new File(path,filename);
-		if(!destFile.exists()){
-			destFile.mkdirs();
+		String message = null;
+		if(file.isEmpty()){
+			message = "请选择上传图片！！";
+			return;
 		}
 		try {
-			file.transferTo(destFile);
-			String imgUrl =  path+"/"+filename;
-			String project = config.getContextPath() != null?config.getContextPath():"";
-			//imgUrl中是否存在systemPath
-			if(imgUrl.indexOf(systemPath) != -1){
-				imgUrl = imgUrl.replace(systemPath,project+"/");
+			byte[] bytes = file.getBytes();
+			String originalFilename = file.getOriginalFilename();
+			String extension = FilenameUtils.getExtension(originalFilename);
+			SimpleDateFormat format = new SimpleDateFormat("ddhhMMssSSS");
+			Set<String> cDifferentRandoms = BackUtils.cDifferentRandoms(1, 6);
+			String filename = format.format(new Date())+cDifferentRandoms+"." + extension;
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM");
+			String date = dateFormat.format(new Date());
+			//项目根目录获取
+			File directory = new File("");
+			String syetemPath = directory.getCanonicalPath();
+			String filePath = syetemPath + "/adminUpload/image/" + date;
+			File destFile = new File(filePath);
+			//目录不存在则自动创建
+			if(!destFile.exists()){
+				destFile.mkdirs();
 			}
-			System.out.println("保存的图片地址是："+imgUrl);
+//			Path path = Paths.get(syetemPath + "/" +filename);
+//			Files.write(path, bytes);
+			file.transferTo(new File(filePath+ "/" +filename));
+			String project = config.getContextPath() != null?config.getContextPath():"";
+			String imgUrl = filePath + "/" +filename;
+			if(imgUrl.indexOf(syetemPath) != -1){
+				imgUrl = imgUrl.replace(syetemPath,project);
+			}
 			Map<String, String> map = new HashMap<String, String>();
 			map.put("imgUrl", imgUrl);
 			ajaxSuccessToJson(response, JSON.toJSONString(map));
 			return;
-		} catch (Exception e) {
+		}catch(Exception e){
+			e.printStackTrace();
 			message = "上传图片出错了！！";
-			log.error(message,e);
-		}  
+		}
 		ajaxErrorToJson(response,null,message);
 		return;
 	}
-
-	
 }
