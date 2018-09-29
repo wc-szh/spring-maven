@@ -19,10 +19,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -227,8 +230,13 @@ public class SystemAct extends BaseAction {
 			String originalFilename = file.getOriginalFilename();
 			String extension = FilenameUtils.getExtension(originalFilename);
 			SimpleDateFormat format = new SimpleDateFormat("ddhhMMssSSS");
+			//获取随机数字和字母
 			Set<String> cDifferentRandoms = BackUtils.cDifferentRandoms(1, 6);
-			String filename = format.format(new Date())+cDifferentRandoms+"." + extension;
+			String filename = null;
+			for(String CdRandoms : cDifferentRandoms){
+				filename = format.format(new Date())+CdRandoms+"." + extension;
+			}
+
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM");
 			String date = dateFormat.format(new Date());
 			//项目根目录获取
