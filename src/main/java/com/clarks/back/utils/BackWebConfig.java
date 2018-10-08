@@ -13,7 +13,6 @@ import java.util.List;
 @Configuration
 public class BackWebConfig implements WebMvcConfigurer {
 
-
     @Autowired
     private BackLoginInterceptors backLoginInterceptors;
 
@@ -21,29 +20,26 @@ public class BackWebConfig implements WebMvcConfigurer {
      * 重写addInterceptors接口设置拦截器
      * @param registry
      */
-    public void addInterceptors(InterceptorRegistry registry){
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(backLoginInterceptors)
-                .addPathPatterns("/**")
+                .addPathPatterns("/**/*.do")
                 .excludePathPatterns("/manager/admin/index.do","/**/*.js","/**/*.css",
-                        "/**/*.images","/**/*.html","/**/*.gif","/**/logout.do");
+                 "/**/*.images","/**/*.html","/**/*.gif","/**/logout.do","/**/*.png");
+
     }
+
 
     /**
      * 重写addResourceHandlers接口设置静态资源(图片)访问
      * @param registry
      */
+    @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 //        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/jsp/");
-        registry.addResourceHandler("/adminUpload/image/**").addResourceLocations("file:D:/clarks-boot/adminUpload/image/");
+        registry.addResourceHandler("/adminUpload/image/**")
+                .addResourceLocations("file:D:/clarks-boot/adminUpload/image/");
     }
 
-    /**
-     * 重写addViewControllers接口设置默认首页
-     * @param registry
-     */
-//    public void addViewControllers(ViewControllerRegistry registry) {
-//        registry.addViewController("/").setViewName("forward:/index");
-//        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
-//        WebMvcConfigurer.super.addViewControllers(registry);
-//    }
+
 }

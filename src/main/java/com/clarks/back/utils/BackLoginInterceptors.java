@@ -21,7 +21,7 @@ public class BackLoginInterceptors implements HandlerInterceptor {
     @Autowired
     private ConfigService configService;
 
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object,ModelMap model)throws Exception{
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object)throws Exception{
         String url="http://" + request.getServerName() //服务器地址
                 + ":"
                 + request.getServerPort()           //端口号
@@ -34,8 +34,8 @@ public class BackLoginInterceptors implements HandlerInterceptor {
         if(user == null ){
             Config config = null;
             System.out.println("该url没有session，已拦截");
-            String u = "/WEB-INF/jas/back/index/login";
-            response.sendRedirect(u);
+
+            response.sendRedirect("/clarks/manager/admin/index.do");
             return false;
             }
 

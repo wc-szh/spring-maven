@@ -207,7 +207,7 @@ public class UserServiceImpl implements UserService {
 
 		//获取用户信息
 		if(StringUtils.isNotBlank(openId)) {
-			String url = "https://api.weixin.qq.	com/sns/userinfo?access_token="+accessToken //授权接口调用凭证
+			String url = "https://api.weixin.qq.com/sns/userinfo?access_token="+accessToken //授权接口调用凭证
 					+ "&openid="+openId//用户唯一标识
 					+ "&lang=zh_CN";//简体
 			String result = sendGet(url);

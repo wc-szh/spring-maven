@@ -73,6 +73,7 @@ public class WeixinAction extends BaseAction{
 			//获取用户信息并保存数据
 			userService.wxLogin(openId,accessToken,req);
 		} catch (Exception e) {
+			e.printStackTrace();
 			log.error("微信用户授权出错！",e);
 			return "redirect:autho.cc";
 		}
